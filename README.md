@@ -24,12 +24,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./Screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution](https://www.frontendmentor.io/solutions/testimonials-grid-section-mAiFVwRfis)
+- Live Site URL: [URL here](https://et-coder.github.io/testimonials-grid/)
 
 ## My process
 
@@ -42,3 +42,4 @@ Users should be able to:
 
 ## Author
 - Frontend Mentor - [@et-coder](https://www.frontendmentor.io/profile/et-coder)
+- Github - [et-coder](https://github.com/et-coder)
