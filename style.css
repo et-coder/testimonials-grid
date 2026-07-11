@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*primary colors*/
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+
+    /*neutral colors*/
+    --White: hsl(0, 0%, 100%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+body {
+    font-family: "Barlow Semi Condensed";
+    font-size: 13px;
+    background-color: var(--Purple-50);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*padding-block: 5em;*/
+
+}
+
+.grid-container {
+    width: 80%;
+    height: 100vh;
+    display: grid;
+grid-template-columns: repeat(4, minmax(255px,1fr));
+    grid-template-rows: repeat(2, 290px);
+    row-gap: 1.5rem;
+    column-gap: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.card {
+    padding: 2.5em;
+    border-radius: 10px;
+    box-shadow: 40px 40px 30px var(--Grey-200);
+}
+
+h2 {
+    font-weight: 600;
+    margin-bottom: 0.75em;
+}
+
+.profile {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.profile img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.profile p {
+    font-size: 1.08em;
+    font-weight: 500;
+}
+
+.profile span {
+    font-size: 0.2em;
+}
+
+.body-text {
+    color: var(--Grey-100);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.daniel {
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-size: 105px;
+    background-repeat: no-repeat;
+    background-position: right 70px top 0;
+    /*grid-area: daniel;*/
+    grid-column: span 2;
+    background-color: var(--Purple-500);
+
+    & .profile {
+        color: var(--White);
+    }
+
+    & img {
+        border: 2px solid var(--Purple-300);
+    }
+
+    & h2 {
+        color: white;
+    }
+
+    & .body-text {
+        color: white;
+    }
+}
+
+.jonathan {
+    /*grid-area: jonathan;*/
+    background-color: var(--Grey-500);
+
+    & .profile {
+        color: white;
+    }
+
+    & h2 {
+        color: white;
+    }
+
+    & .body-text {
+        color: white;
+    }
+}
+
+.jeanette {
+    /*grid-area: jeanette;*/
+    background-color: white;
+
+    & h2 {
+        color: var(--Grey-500);
+    }
+    & .profile,
+    & .body-text {
+        color: var(--Grey-400);
+    }
+}
+
+.patrick {
+    /*grid-area: patrick;*/
+    grid-column: span 2;
+    background-color: var(--Dark-blue);
+
+    & h2 {
+        color: var(--Grey-100);
+    }
+    & img {
+        border: 2px solid var(--Purple-500);
+    }
+
+    & .profile {
+        color: var(--White);
+    }
+
+    & .body-text {
+        color: var(--Grey-100);
+    }
+}
+
+.kira {
+    /*grid-area: kira;*/
+    grid-column: 4;
+    grid-row: 1/span 2;
+    background-color: var(--White);
+
+    & h2 {
+        color: var(--Grey-500);
+    }
+
+    & .profile,
+    & .body-text {
+        color: var(--Grey-400);
+    }
+}
+
+@media only screen and (max-width: 649px) {
+
+    .container {
+        align-items: start;
+        padding-block: 5em;
+        padding-inline: 5em;
+    }
+    .grid-container {
+        width: 100%;
+        height: auto;
+        grid-template-columns:minmax(305px,1fr);
+        /*grid-template-columns: repeat(autofit, minmax(305px,1fr));*/
+        grid-template-rows: auto;
+        justify-content: center;
+        align-content: start;
+    }
+    .card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .body-text {
+        line-height: 1.4;
+    }
+
+    .daniel {
+        background-image: none;
+    }
+
+}
+
+@media only screen and (min-width: 650px ) and (max-width: 1200px) {
+    .container {
+        padding-block: 5em;
+    }
+
+    .grid-container {
+        height: auto;
+        grid-template-columns: repeat(2,minmax(305px,1fr));
+        grid-template-rows: repeat(4,auto);
+        align-content: start;
+    }
+
+    .daniel {
+        grid-column: span 1;
+        grid-row: span 2;
+        background-image: none;
+    }
+
+    .patrick {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 2;
+    }
+
+    .jonathan {
+        grid-column: 1;
+        grid-row: 3 / span 1;
+    };
+
+    .jeanette {
+        grid-column:1;
+    }
+
+    .kira {
+        grid-column: 2 /span 1;
+        grid-row: 3 /span 2;
+    }
+
+
+    /*.card {
+            grid-column: span 1 !important;
+            grid-row: span 1 !important;
+        }*/
+}
